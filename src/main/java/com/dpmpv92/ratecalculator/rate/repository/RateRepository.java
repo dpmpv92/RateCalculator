@@ -11,7 +11,10 @@ public class RateRepository {
     List<RateWindow> rates = Collections.emptyList();
 
     public void save(List<RateWindow> rates) {
-        System.out.println("expectRate = " + rates);
         this.rates = rates;
+    }
+
+    public List<RateWindow> find() {
+        return rates;
     }
 }

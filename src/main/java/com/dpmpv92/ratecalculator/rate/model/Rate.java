@@ -10,4 +10,5 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NoArgsConstructor
 public class Rate {
     int rate;
+    boolean rateFound;
 }

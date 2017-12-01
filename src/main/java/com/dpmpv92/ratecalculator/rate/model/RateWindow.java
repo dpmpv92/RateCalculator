@@ -9,9 +9,9 @@ import java.util.List;
 @Data
 @Builder
 public class RateWindow {
-     LocalTime startTime;
-     LocalTime endTime;
-     List<DaysOfWeek> daysOfWeekList;
-     int price;
+    LocalTime startTime;
+    LocalTime endTime;
+    List<DaysOfWeek> daysOfWeekList;
+    int price;
 
 }

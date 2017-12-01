@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Data
 //@Builder
-@XmlRootElement(name = "rates")
+@XmlRootElement(name = "rate")
 @NoArgsConstructor
 public class RateWindowRequest {
     String days;

@@ -1,8 +1,8 @@
 package com.dpmpv92.ratecalculator.rate.controller;
 
-import com.dpmpv92.ratecalculator.rate.model.RateWindowRequest;
 import com.dpmpv92.ratecalculator.rate.model.RatesWindowRequest;
 import com.dpmpv92.ratecalculator.rate.service.RateService;
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -10,10 +10,6 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.util.List;
-
-import static java.util.Arrays.asList;
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -27,6 +23,12 @@ public class RateControllerTest {
 
     @Test
     public void getRate() throws Exception {
+        DateTime fromDate = new DateTime().minus(10);
+        DateTime toDate = new DateTime();
+
+        rateController.getRate(fromDate, toDate);
+
+        verify(rateService).getRate(fromDate, toDate);
     }
 
     @Test
@@ -37,5 +39,4 @@ public class RateControllerTest {
 
         verify(rateService).saveRate(rateWindowRequest);
     }
-
 }
